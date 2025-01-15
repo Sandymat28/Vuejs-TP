@@ -49,7 +49,8 @@ pipeline{
             steps{
                 echo 'Deploy with kubernetes objects'
                 sh 'kubectl apply -f playlist-k8s.yaml'
-            }
+            	sh 'minikube service playlist-service'
+		}
         }
 
         stage('Remote SSH') {

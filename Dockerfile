@@ -1,5 +1,7 @@
 FROM node:lts-alpine AS build-stage
 
+RUN apt-get update && apt-get install -y bash
+
 WORKDIR /app
 
 COPY package*.json ./
